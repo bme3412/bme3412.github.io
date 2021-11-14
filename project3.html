@@ -84,7 +84,9 @@
       <li>The increased importance of the 3-point shot, in what can only be termed the 'Steph Curry effect', is undeniable. </li><br>
     </ol>
     <br>
-    <hr class="dashed">
+    <figure>
+      <img src="/img/break5.png" srcset=""alt="break">
+    </figure>
     <br>
     <h2>Random Thought 1: Top 25 players of the past 20 years: </h2>
     <p>Methodology: From the original dataset (n=230,326), I used the groupby function to group by player, then averaged each statistical category to arrive at career average stats, and finally ranked by highest Game_Score average. </p>
@@ -101,6 +103,9 @@
       <figcaption>Avg per game metrics are quantiled, then sorted by GAME_SCORE</figcaption>
     </figure>
     <p>Observations: </p>
+    <figure>
+      <img src="/img/break5.png" srcset=""alt="break">
+    </figure>
     <h2>Random Thought 2: Top 25 individual seasons since 2000: </h2>
     <p>Methodology: From the original dataset (n=230,326), I used the groupby function on Season, then averaged each statistical category to arrive at per season stats, and finally ranked by highest Game_Score average.</p>
     <figure>
@@ -108,11 +113,17 @@
       <figcaption>It's LeBron James' world and the rest of the NBA is living in it</figcaption>
     </figure>
     <p>Observations: </p>
+    <figure>
+      <img src="/img/break5.png" srcset=""alt="break">
+    </figure>
     <h2>Random Thought 3: The best player for each season, from 2000-2021 </h2>
     <p>Observations: To be considered the best player per season, a player would have to average a minimum of 24 points per game, and pull down 6 rebounds while dishing out a minimum of 4 assists. Out of 230,326 player games played, this statline was achieved 4,239 times, or 1.8%. I should also point out the the best player per season averaged well north of 24 points per game, and that while Kevin Garnett did average the lowest points per game of the beast seasons of the past 20 years, he also averaged 14 rebounds, 5 assists and 2 blocks (in the 2004 season). Out of all games played since 2000, 261 players had games with > 24 points, > 14 rebounds and > 5 assists (0.1% of all games played). </p>
     <figure>
       <img src="/img/NBA_top__seasons_year_sort.png" srcset=""alt="best-each-season">
       <figcaption>Regime changes across the NBA - who was the best player for each season?</figcaption>
+    </figure>
+    <figure>
+      <img src="/img/break5.png" srcset=""alt="break">
     </figure>
     <h2>Random Thought 4: How many Triple-Doubles have been recorded since 2000?</h2>
     <p>A 'triple double' in basketball is a statistical occurrence during which a player records >=10 in any three of the offensive statistical measures during a single game. As an example, the most common form of a triple-double is when an individual player tallies 10 or more points, 10 or more rebounds, and 10 or more assists for one game (the name refers to three stat categories in double digits). Some pundits regard it as a sign of basketball excellence, while others regard it as merely an outcome of stat-padding; the true meaning is likely somewhere in between. Triple-doubles historically have been rare, but have increased in prominence with the increased popularity of the three-point shot and increased pace of the game (higher ending game scores are indicative of more offensive possessions). </p>
@@ -136,6 +147,9 @@
       <img src="/img/SQL_tripdoub.png" srcset=""alt="SQL_tripdub">
       <figcaption>Using MySQL to identify triple-doubles </figcaption>
     </figure>
+    <figure>
+      <img src="/img/break5.png" srcset=""alt="break">
+    </figure>
     <h2>Random Thought 5: Once considered a majority-American sport, basketball is played in all parts of the world and the NBA is increasingly globally diverse</h2>
   
     <p>The 1992 Olympics held in Barcelona, Spain marked the first time that American NBA players participated in the Olympics. And it showed, as the team, featuring Michael Jordan, Magic Johnson, Larry Bird and Charles Barkley, beat opponents by an average margin of 44 points on their way to taking home the gold medal. But the world has caught up since then, considerably, to the extent that the past 3 players awarded league MVP have been non-American.</p>
@@ -149,10 +163,15 @@
       <img src="/img/US_players.png" srcset=""alt="US-players">
       <figcaption>Americans still make up the majority of the NBA, but the rest of the world is catching up</figcaption>
     </figure>
+    <p></p>
+    <figure>
+      <img src="/img/break5.png" srcset=""alt="break">
+    </figure>
+    <p></p>
     <h2>Random Thought 6: The Steph Curry effect </h2>
-    <p></p><br>
-    <hr class="dashed">
-    <br>
+    <p></p>
+   
+    
     <h2>Appendix: How did I get all the data? I created my own data set</h2>
     <br>
     <h4>First, I used an API, web scraping, and Pandas to get all game-logs from each player for each team since the 2000 season</h4>
