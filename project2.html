@@ -88,12 +88,54 @@
   <figure>
     <img src="/img/isna_sum.png" srcset=""alt="isna-sum">
   </figure>
-  <h3>Description of each column</h3>
+  <p>Now check for the boolean and categorical data, to see if any of them are worth including:</p>
+  <figure>
+    <img src="/img/airbnb_hist.png" srcset=""alt="airbnb-hist">
+  </figure>
+  <p>From the above, it can be seen that several columns only contain one category and can be dropped.</p>
+  <h3>Description of each column:</h3>
+  <ul>
+    <li>host_since - date that the host first joined Airbnb</li>
+    <li>host_response_time - average amount of time the host takes to communicate</li>
+    <li>host_response_rate - proportion of messages that the host replies to</li>
+    <li>host_is_superhost - whether or not the host is a superhost, which is a mark of quality for the top-rated and most experienced hosts, and can increase your search ranking on Airbnb</li>
+    <li>property_type - type of property, e.g. house or flat</li>
+    <li>room_type - type of listing, e.g. entire home, private room or shared room</li>
+    <li>bathrooms - number of bathrooms</li>
+    <li>beds - number of beds</li>
+    <li>amenities - list of amenities</li>
+    <li> price - nightly advertised price</li>
+    <li>minimum_nights - the minimum length of stay</li>
+    <li>maximum_nights - the maximum length of stay</li>
+    <li>availability_30 - how many nights are available to be booked in the next 30 days</li>
+    <li>availability_60 - how many nights are available to be booked in the next 60 days</li>
+    <li>availability_90 - how many nights are available to be booked in the next 90 days</li>
+    <li>availability_365 - how many nights are available to be booked in the next 365 days</li>
+    <li>number_of_reviews - the number of reviews left for the property</li>
+    <li>number_of_reviews_ltm - the number of reviews left for the property in the last twelve months</li>
+    <li>first_review - the date of the first review</li>
+    <li>last_review - the date of the most recent review</li>
+    <li>review_scores_rating - guests can score properties overall from 1 to 5 stars</li>
+    <li>review_scores_accuracy - guests can score the accuracy of a property's description from 1 to 5 stars</li>
+    <li>review_scores_cleanliness - guests can score a property's cleanliness from 1 to 5 stars</li>
+    <li>review_scores_checkin - guests can score their check-in from 1 to 5 stars</li>
+    <li>review_scores_communication - guests can score a host's communication from 1 to 5 stars</li>
+    <li>review_scores_location - guests can score a property's location from 1 to 5 stars</li>
+    <li>review_scores_value - guests can score a booking's value for money from 1 to 5 stars</li>
+    <li>reviews_per_month - calculated field of the average number of reviews left by guest each month</li>
+  </ul>
+
   <h3>Cleaning individual columns</h3>
+  <figure>
+    <img src="/img/host_response_time.png" srcset=""alt="host-response-time">
+  </figure>
+  <figure>
+    <img src="/img/host_response_rate.png" srcset=""alt="host-response-rate">
+  </figure>
   <figure>
     <img src="/img/break5.png" srcset=""alt="break">
   </figure>
-  <h2>Exploratory data analysis</h2>
+  <h1>Exploratory data analysis</h1>
   <h4>Time Series</h4>
   <h4>Numerical features</h4>
   <h4>Categorical features</h4>
