@@ -52,27 +52,19 @@
       <a href="/html/work.html">Work</a> 
       <a href="/html/fun.html">When Not Working</a>  
     </nav>
-    <h2>Table of contents:</h2>
-    <ul>
-      <li>Intro and project objective</li>
-      <li>The dataset</li>
-      <li>Cleaning and preprocessing</li>
-      <li>Exploratory data analysis</li>
-      <li>Preparing the model for modeling</li>
-   
-      <li>Conclusion and recommendations</li>
-    </ul>
+ 
 
     <h2>Intro</h2>
     <p>I studied abroad in Paris from February to June 2009.</p>
-    <h2>Objective: Find the best airbnb in Paris:</h2>
-    <p>I have always been fascinated by airbnb.</p>
+    <h2>Objective: Find the best Airbnb in Paris:</h2>
+    <p>I have always been fascinated by airbnb. This project aims to use pandas and machine learning to explore Airbnb listing data, in order to find the top 5 Airbnb properties in Paris. </p>
     <figure>
       <img src="/img/break5.png" srcset=""alt="break">
     </figure>
     <p></p>
     
    <h2>The dataset</h2>
+   <p>The datset used for this project comes from <a href="http://insideairbnb.com/get-the-data.html" >Insideairbnb.com</a>, which is actually an anti-Airbnb lobbying group that scrapes listings, reviews and calendar data for multiple cities around the world. The dataset that I used from the site was scraped on September 30, 2021.</p>
    <br>
    <figure>
     <img src="/img/airbnb_python.png" srcset=""alt="airbnb-python">
@@ -81,14 +73,15 @@
    <figure>
     <img src="/img/break5.png" srcset=""alt="break">
   </figure>
-  <h2>Cleaning and pre-processing</h2>
+  <h1>Cleaning and pre-processing</h1>
+  <p>The dataset does have some limitations and is quite extensive; to facilitate analysis I will start by importing necessary python packages and libraries, then cleaning the data.</p>
   <h3>Importing the libraries and data</h3>
   <figure>
     <img src="/img/import_paris.png" srcset=""alt="import-paris">
     <figcaption>Importing the file - which contains 50,133 AirBnb listings</figcaption>
   </figure>
   <h3>Dropping initial columns</h3>
-  <p>To simplify the dataset, I will drop columns that will not useful in predicting price. I also will check for missing data.</p>
+  <p>To simplify the dataset, I will drop columns that will not useful in predicting price. I also will check for missing data - and drop tbose columns that have a majority of data that is null.</p>
   <figure>
     <img src="/img/drop_initial.png" srcset=""alt="drop-initial">
   </figure>
