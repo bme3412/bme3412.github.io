@@ -72,9 +72,9 @@
         <img src="/img/top_5.png" srcset=""alt="top-5-games">
         <figcaption>The top 5 individual efforts since 2000 </figcaption>
       </figure>
-      <li>The best player over the time period spanning from 2000-2021, purely looking at statistics and excluding the postseason, was LeBron James, followed next by Kevin Durant and then James Harden.</li>
+      <li>The best player over the time period spanning from 2000-2021, purely looking at statistics and excluding the postseason, was LeBron James, followed next by Kevin Durant and then James Harden. When using a cumulative +/- method, the best players was Tim Duncan, followed by LeBron James, Stephen Curry, Chris Paul and then Kevin Durant. </li>
       <li>The influx of international talent is undeniable and the game is the better for it. 389 players from 22 different countries played during the 2000 NBA season; 91.5% of these players were American. Flash forward to 2020, where 607 total players (roster sizes expanded) from 46 different countries played a game, and 77.1% of these players were American. For the past 3 seasons, the league MVP has also been European, with Denver's Nikola Jokic the reigning MVP with Giannis Antetokounmpo having won back to back MVP awards starting in 2019. He also unanimously won the 2021 Finals MVP. </li>
-      <li>To be the top player in the NBA for a given season, a player would have to average a minimum of 24 points, 6 rebounds and 4 assists. Out of the total 230,326 statlines over the prior 20 years, this has occured 4,239 times, or 1.8% of all games played. Out of all of the best players since 2000, Kevin Garnett averaged the lowest points per game, at 24.2, but he also averaged 14 rebounds with 5 assists and 2 blocks, which has occured 261 times, or 0.1% of all games played. Kevin Garnett was MVP in 2004. </li>
+      <li>To be the top player in the NBA for a given season, a player would have to average a minimum of 24 points, 6 rebounds and 4 assists. Out of the total 230,326 statlines over the prior 20 years, this individual statline - more than 24 points, 6 rebounds and 4 assists - has occured 4,239 times, or 1.8% of all games played. Out of all of the best players since 2000, Kevin Garnett averaged the lowest points per game, at 24.2, but he also averaged 14 rebounds with 5 assists and 2 blocks, which as an individual statline has occured 261 times, or 0.1% of all games played. Kevin Garnett was MVP in 2004. </li>
       <li>The most unique statline (n=230,320) of the past 20 years was recorded by Draymond Green of the Golden State Warriors. On February 10, 2017 in a game against Memphis, he pulled down 11 rebounds while dishing out 10 assists with 10 steals and 5 blocks... and 4 points. This was the first "triple-double" (when a player records double digit values in 3 statistical categories for a single game) in NBA history without scoring double-digits in points. He shot the ball 6 times, but ended up with a +/- score of 26. For reference, out of a total of 230,326 individual games played over the past 20 years, there has been a total of 1,090 triple-doubles (a 0.5% occurence). Based on this empirical data, the odds of tallying a triple double without points is 0.0005%. It was a once in a generation game. </li>
       <li>Throughout his 19 year (and counting) career, LeBron James has averaged 27 points, 7 rebounds and 7 assists for each game. Yet across the 1,305 regular season games he has played, he has never had an individual game with 27 points, 7 rebounds and 7 assists. Amazing. This is corroborated by a SQL query which returns null values. </li>
       
@@ -104,6 +104,11 @@
       <figcaption>Avg per game metrics are quantiled, then sorted by GAME_SCORE</figcaption>
     </figure>
     <p>Observations: </p>
+    
+    <p>Another way to analyze the top players list may be to look at the cumulative +/- metric.</p>
+    <figure>
+      <img src="/img/NBA_plusminus15.png" srcset=""alt="NBA+-">
+    </figure>
     <figure>
       <img src="/img/break5.png" srcset=""alt="break">
     </figure>
@@ -172,11 +177,14 @@
     <h2>Random Thought 6: The Steph Curry effect </h2>
     <p>Chris Ford of the Boston Celtics made the NBA's first 3-pointer in the 1979-1980 NBA season (the rookie seasons for both Larry Bird and Magic Johnson) and since then the shot has become a staple of the game. Originally introduced on a one-year trial basis, the 3-point line measured 22-feet from the hoop in the corners and 23-feet, 9 inches to the top of the arc. As the game has evolved, the importance of the 3-point shot has increased.
     </p>
-    <p>The record for most 3-point shots made without a miss during a game is held by Ben Gordon, who amde 9 3-pointers in a single game (twice) without a miss. While playing for the Chicago Bulls, Ben Gordon was 9 for 9 on 3-point shots on his way to 32 points (he connected on 11 shots out of a total of 19) on April 14, 2006. A bit under 6 years later (March 21, 2012), this time as a member of the Detroit Pistons, he connected on 9 3-pointers and made 13 out of 22 shots and 10 of 11 free throws to score a total of 45 points.  </p>
+    <p>The record for most 3-point shots made without a miss during a game is held by Ben Gordon, who made 9 3-pointers in a single game (twice) without a miss. While playing for the Chicago Bulls, Ben Gordon was 9 for 9 on 3-point shots on his way to 32 points (he connected on 11 shots out of a total of 19) on April 14, 2006. A bit under 6 years later (March 21, 2012), this time as a member of the Detroit Pistons, he connected on 9 3-pointers and made 13 out of 22 shots and 10 of 11 free throws to score a total of 45 points.  </p>
     <figure>
       <img src="/img/3PT_nomiss.png" srcset=""alt="3PT-no-miss">
     </figure>
-    <p>But really, Stephen Curry is the 3-point king and his dominance at making the shot is widely credited for the game's evolution. </p>
+    <p>But really, Stephen ("Steph") Curry of the Golden State Warriors is the 3-point king and his dominance at making the shot is widely credited for  influencing a next step in the game's evolution. To wit, there has only been 3 seasons in NBA history where a player have averaged over 5 threes made per game, and all 3 belong to Steph Curry. He averaged 5.3 threes per game in the 2020-21 season, 5.1 in the 2018-19 season, and 5.1 in the 2015-16 season. As of writing, duing the curreny 2021-22 season, throguh 15 game has has averaged 5.7 threes made per game. </p>
+    <figure>
+      <img src="/img/steph_3PT_ code.png" srcset=""alt="steph-3p-code">
+    </figure>
     <figure>
       <img src="/img/Steph_3P.png" srcset=""alt="steph-3p">
     </figure>
