@@ -58,6 +58,9 @@
     For the past 20 years I have devoured the NBA and watched most Boston Celtics games over the time period (20 seasons at 82 games per season is 1,640 games), and even purchased season's tickets for the 2013-2015 Celtics seasons (43 home games per season). So yes, I love basketball. Python proved extremely useful for analyzing how the league has changed since 2000 when I watched my first Celtics game on tv.</p>
     <p>Before diving in you should know that much of the ranking analysis relies on using the Game Score metric, which is derived to standardize across all games, and provides a single measurement of a player's productivity for a single game. The metric is standardized such that a total of 40 points would be considered an outstanding performance, whereas 10 points is an average performance. **The formula for Game Score is: 'PTS + 0.4 * FG - 0.7 * FGA - 0.4*(FTA - FT) + 0.7 * ORB + 0.3 * DRB + STL + 0.7 * AST + 0.7 * BLK - 0.4 * PF - TOV'. </p>
     <figure>
+      <img src="/img/game_score_plot.png" srcset=""alt="game-score-plot">
+    </figure>
+    <figure>
       <img src="/img/Game_score_scatter.png" srcset=""alt="game-score-scatter">
       <figcaption>Player game scores for all games played since 2000 (n=230,326); the increased importance of the 3 point shot, as indicated by red, is apparent in what can only be reffered to as the "Steph Curry effect" </figcaption>
     </figure>
@@ -100,6 +103,12 @@
     <h4>Initial look at top 25 players, with metrics quantiled (1 = top 20%; 5 = bottom 20%): </h4>
     <p>Methodology: To standardize across the dataset, I also ranked each value and then grouped into quantiles (where 1 = top 20% of the dataset and 5 = bottom 20% of the dataset). For the purpose of finding the best players, I filtered games played to > 300.</p>
     <figure>
+      <img src="/img/rank_qcut.png" srcset=""alt="rank-qcut">
+    </figure>
+    <figure>
+      <img src="/img/bin_labels.png" srcset=""alt="bin-labels">
+    </figure>
+    <figure>
       <img src="/img/NBA_top_25_ile.png" srcset=""alt="nba-top25-ile">
       <figcaption>Avg per game metrics are quantiled, then sorted by GAME_SCORE</figcaption>
     </figure>
@@ -114,6 +123,9 @@
     </figure>
     <h2>Random Thought 2: Top 25 individual seasons since 2000: </h2>
     <p>Methodology: From the original dataset (n=230,326), I used the groupby function on Season, then averaged each statistical category to arrive at per season stats, and finally ranked by highest Game_Score average.</p>
+    <figure>
+      <img src="/img/nba_top25_code.png" srcset=""alt="top-25-code">
+    </figure>
     <figure>
       <img src="/img/NBA_top_25_seasons_by_year.png" srcset=""alt="nba-top25-seasons-year">
       <figcaption>It's LeBron James' world and the rest of the NBA is living in it</figcaption>
@@ -135,9 +147,17 @@
     <p>A 'triple double' in basketball is a statistical occurrence during which a player records >=10 in any three of the offensive statistical measures during a single game. As an example, the most common form of a triple-double is when an individual player tallies 10 or more points, 10 or more rebounds, and 10 or more assists for one game (the name refers to three stat categories in double digits). Some pundits regard it as a sign of basketball excellence, while others regard it as merely an outcome of stat-padding; the true meaning is likely somewhere in between. Triple-doubles historically have been rare, but have increased in prominence with the increased popularity of the three-point shot and increased pace of the game (higher ending game scores are indicative of more offensive possessions). </p>
     <p>Since 2000, there has been a total of 1,090 triple-doubles tallied by NBA players. This includes 1,076 triple-doubles of the point-rebounds-assists variety, with 13 composed of point-rebounds-blocks, and 1 including rebounds, assists and steals. </p>
     <figure>
+      <img src="/img/trip_doub_graph.png" srcset=""alt="trip-dub-graph">
+    </figure>
+    
+    <figure>
       <img src="/img/trip_dub_pra.png" srcset=""alt="trip-dub-pra">
       <figcaption>Russell Westbrook is the clear leader among the top 25 players that posted triples-doubles since 2000</figcaption>
     </figure>
+    <figure>
+      <img src="/img/trip_doub_graph2.png" srcset=""alt="trip-dub-graph-2">
+    </figure>
+    
     <figure>
       <img src="/img/trip_dub_prb.png" srcset=""alt="trip-dub-prb">
       <figcaption>13 Point-Rebound-Block triple-doubles since 2000</figcaption>
@@ -161,10 +181,20 @@
     <p>The 1992 Olympics held in Barcelona, Spain marked the first time that American NBA players participated in the Olympics. And it showed, as the team, featuring Michael Jordan, Magic Johnson, Larry Bird and Charles Barkley, beat opponents by an average margin of 44 points on their way to taking home the gold medal. But the world has caught up since then, considerably, to the extent that the past 3 players awarded league MVP have been non-American.</p>
     <p>As shown below, international players represented ~23% of NBA rosters for the 2021 season (American players were 77%), which has been a steady mix shift since 2000, when 9 out of 10 players were American. In the 2021 season, American players hailed from 46 different countries, which is more than double the amount of countries represented in the 2000 season.</p>
     <figure>
+      <img src="/img/global_df.png" srcset=""alt="global-df">
+    </figure>
+    <figure>
+      <img src="/img/per_global.png" srcset=""alt="per-global">
+    </figure>
+    
+    <figure>
       <img src="/img/global_players.png" srcset=""alt="global-players">
       <figcaption>The NBA has become increasingly globally diverse since 2000</figcaption>
     </figure>
     <br>
+    <figure>
+      <img src="/img/global_plot.png" srcset=""alt="global-plot">
+    </figure>
     <figure>
       <img src="/img/US_players.png" srcset=""alt="US-players">
       <figcaption>Americans still make up the majority of the NBA, but the rest of the world is catching up</figcaption>
@@ -208,19 +238,27 @@
       <img src="/img/bos_csvs.png" srcset=""alt="bos-csv">
       <figcaption>Each team folder holds 21 CSV files holding dataframes of each player's gamelog</figcaption>
     </figure>
+    <figure>
+      <img src="/img/season_row.png" srcset=""alt="season-row">
+      <figcaption>Function to extract data for each season and save as a DataFrame</figcaption>
+    </figure>
     <p>Then for each team, I appended all dataframes into one master dataframe with all game logs for every player since the 2000 season. I then ranked by highest GAME_SCORE to rank the best individual games for each NBA team since 2000. </p>
+    <figure>
+      <img src="/img/master_df_func.png" srcset=""alt="master-df-func">
+    </figure>
     <figure>
       <img src="/img/BOS_df.png" srcset=""alt="bos-df">
       <figcaption>Jayson Tatum's 60 point game ranks as the best individual game for the Boston Celtics since the 2000 season</figcaption>
     </figure>
     <p>I then appended all team dataframes to compile a master dataframe for each game log for each player on each team for each season since since 2000. I also ranked this by GAME_SCORE. </p>
     <figure>
+      <img src="/img/master_dr_rank.png" srcset=""alt="master-df-rank">
+    </figure>
+    <figure>
       <img src="/img/NBA_df.png" srcset=""alt="nba-df">
       <figcaption>Kobe Bryant tallied the best individual game of the past 20 years with his scintillating 81 point outburst against Toronto in 2006</figcaption>
     </figure>
     <br>
-    <h4>I also used web scraping and Pandas to pull in season stats for each player on each team since the 2000 season</h4>
-    <p>To rank players by year - need to get each individual game, and quantile all values that matter. Then find a moving average within each season, and then take an average-weight to quantile (histogram) for each season. Then do this for the entire time period, years 2000-2021. </p>
     <h3>Appendix: Storing the data - enter MySQL </h3>
     <p>Now that I have all the data for every game played by every NBA player since the 2000 season, I need a place to store the data. For this I rely upon SQL -- which I use with python for easier data manipulation.</p>
     <figure>
