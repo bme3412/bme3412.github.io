@@ -52,11 +52,11 @@
       <a href="/html/work.html">Work</a> 
       <a href="/html/fun.html">When Not Working</a>  
     </nav>
-    <h2>Rebounds and Rings: Thoughts and observations (a rant?) from 20 years as an NBA fanatic - with assistance from BeautifulSoup, Pandas and MatplotLib</h2>
+    <h2>Rebounds and Rings: Thoughts and observations (a rant?) from 20 years as an NBA fanatic - with assistance from BeautifulSoup, Pandas, MatplotLib and Altair</h2>
     <p>November 15, 2021</p>
-    <p>I love basketball and I love the NBA. I think what I like most about the league is the competitive meritocracy where a player from virtually anywhere can succeed as long as he can play -- it is a make or miss league. Case in point, for the first 18 years of his life, Giannis Antetokounmpo, who was born in Greece the son of Nigerian parents, grew up poor, sometimes homeless, and effectively stateless due to Greek nationality laws concerning how he came to Greece. Now at the age of 26, Giannis, who stands 6'11" with a 7 foot wing span, is a 2-time MVP, perennial All-Star and most recently he scored 50 points in the deciding game to clinch the championship for the 2021 season. Amazing - all he needed was a ball and a hoop. 
-    For the past 20 years I have devoured the NBA and watched most Boston Celtics games over the time period (20 seasons at 82 games per season is 1,640 games), and even purchased season's tickets for the 2013-2015 Celtics seasons (43 home games per season). So yes, I love basketball. Python proved extremely useful for analyzing how the league has changed since 2000 when I watched my first Celtics game on tv.</p>
-    <p>Before diving in you should know that much of the ranking analysis relies on using the Game Score metric, which is derived to standardize across all games, and provides a single measurement of a player's productivity for a single game. The metric is standardized such that a total of 40 points would be considered an outstanding performance, whereas 10 points is an average performance. **The formula for Game Score is: 'PTS + 0.4 * FG - 0.7 * FGA - 0.4*(FTA - FT) + 0.7 * ORB + 0.3 * DRB + STL + 0.7 * AST + 0.7 * BLK - 0.4 * PF - TOV'. </p>
+    <p>I love basketball and I love the NBA. I think what I like most about the league is the competitive meritocracy where a player from virtually anywhere can succeed as long as he can play -- it is a make or miss league. Case in point, for the first 18 years of his life, Giannis Antetokounmpo, who was born in Greece the son of Nigerian parents, grew up poor, sometimes homeless, and effectively stateless due to Greek nationality laws concerning how he came to Greece. Now at the age of 26, Giannis, who stands 6'11" with a 7 foot wing span, is a 2-time MVP, perennial All-Star and most recently he scored 50 points in the deciding game to clinch the championship for the 2021 season. Amazing - all he needed was a ball and a hoop. <br>
+    <br>For the past 20 years I have devoured the NBA and watched most Boston Celtics games over the time period (20 seasons at 82 games per season is 1,640 games), and even purchased season's tickets for the 2013-2015 Celtics seasons (43 home games per season). So yes, I love basketball. Python proved extremely useful for analyzing how the league has changed since 2000 when I watched my first Celtics game on tv.<br>
+    <br>Before diving in you should know that much of the ranking analysis relies on using the Game Score metric, which is derived to standardize across all games, and provides a single measurement of a player's productivity for a single game. The metric is standardized such that a total of 40 points would be considered an outstanding performance, whereas 10 points is an average performance. **The formula for Game Score is: 'PTS + 0.4 * FG - 0.7 * FGA - 0.4*(FTA - FT) + 0.7 * ORB + 0.3 * DRB + STL + 0.7 * AST + 0.7 * BLK - 0.4 * PF - TOV'. </p>
     <figure>
       <img src="/img/game_score_plot.png" srcset=""alt="game-score-plot">
     </figure>
@@ -85,7 +85,7 @@
         <img src="/img/Lebron_avg.png" srcset=""alt="lebron-average">
         <figcaption>A SQL search for 27 points, 7 rebounds and 7 assists results in no records</figcaption>
       </figure>
-      <li>The increased importance of the 3-point shot, in what can only be termed the 'Steph Curry effect', is undeniable. </li><br>
+      <li>It's often been said that the rhythmic and free-flowing nature of basketball makes the game comparable to jazz music. But in recent years, the increased emphasis of the 3-point shot makes the game more comparable to a Russian novel, where plot twists are abundant in the form of frequent comebacks, and no game is out of reach regardless of the deficit. Although the 3-point shot was introduced on a trial basis in 1980, the brilliant and mesmerizing Stephen Curry of the Golden State Warriors is widely known as the 3-point shot king and the best shooter the game has ever seen. He is so good at making 3-pointers that some in NBA circles have speculated that the league office will introduce a 4-point shot. As of writing, throguh 21 games in th 2021-2022 season he has already made 114 3-pointers; in the 1986 season basketball Legend Larry Bird of the Boston Celtics made 82 3-pointers for the entire season! For an interactive visualization of Stephen Curry's career 3-point domiannce - made using the python package Altair - please see <a href="/html/steph_altair.html" >the link here</a>.</li><br>
     </ol>
     <br>
     <figure>
@@ -135,7 +135,11 @@
       <img src="/img/break5.png" srcset=""alt="break">
     </figure>
     <h2>Random Thought 3: The best player for each season, from 2000-2021 </h2>
+    
     <p>Observations: To be considered the best player per season, a player would have to average a minimum of 24 points per game, and pull down 6 rebounds while dishing out a minimum of 4 assists. Out of 230,326 player games played, this statline was achieved 4,239 times, or 1.8%. I should also point out the the best player per season averaged well north of 24 points per game, and that while Kevin Garnett did average the lowest points per game of the beast seasons of the past 20 years, he also averaged 14 rebounds, 5 assists and 2 blocks (in the 2004 season). Out of all games played since 2000, 261 players had games with > 24 points, > 14 rebounds and > 5 assists (0.1% of all games played). </p>
+    <figure>
+      <img src="/img/best_per_season.png" srcset=""alt="best-per-season">
+    </figure>
     <figure>
       <img src="/img/NBA_top__seasons_year_sort.png" srcset=""alt="best-each-season">
       <figcaption>Regime changes across the NBA - who was the best player for each season?</figcaption>
@@ -205,9 +209,8 @@
     </figure>
     <p></p>
     <h2>Random Thought 6: The 3-Point shot and the brilliance of Stephen Curry </h2>
-    <p>Chris Ford of the Boston Celtics made the NBA's first 3-pointer in the 1979-1980 NBA season (the rookie seasons for both Larry Bird and Magic Johnson) and since then the shot has become a staple of the game. Originally introduced on a one-year trial basis, the 3-point line measured 22-feet from the hoop in the corners and 23-feet, 9 inches to the top of the arc. As the game has evolved, the importance of the 3-point shot has increased.
-    </p>
-    <p>The record for most 3-point shots made without a miss during a game is held by Ben Gordon, who made 9 3-pointers in a single game (twice) without a miss. While playing for the Chicago Bulls, Ben Gordon was 9 for 9 on 3-point shots on his way to 32 points (he connected on 11 shots out of a total of 19) on April 14, 2006. A bit under 6 years later (March 21, 2012), this time as a member of the Detroit Pistons, he connected on 9 3-pointers and made 13 out of 22 shots and 10 of 11 free throws to score a total of 45 points.  </p>
+    <p>Chris Ford of the Boston Celtics made the NBA's first 3-pointer in the 1979-1980 NBA season (the rookie seasons for both Larry Bird and Magic Johnson) and since then the shot has become a staple of the game. Originally introduced on a one-year trial basis, the 3-point line measured 22-feet from the hoop in the corners and 23-feet, 9 inches to the top of the arc. As the game has evolved, the importance of the 3-point shot has increased. <br>
+    <br>The record for most 3-point shots made without a miss during a game is held by Ben Gordon, who made 9 3-pointers in a single game (twice) without a miss. While playing for the Chicago Bulls, Ben Gordon was 9 for 9 on 3-point shots on his way to 32 points (he connected on 11 shots out of a total of 19) on April 14, 2006. A bit under 6 years later (March 21, 2012), this time as a member of the Detroit Pistons, he connected on 9 3-pointers and made 13 out of 22 shots and 10 of 11 free throws to score a total of 45 points.  </p>
     <figure>
       <img src="/img/3PT_nomiss.png" srcset=""alt="3PT-no-miss">
     </figure>
