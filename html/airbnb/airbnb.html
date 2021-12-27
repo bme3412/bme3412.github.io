@@ -56,12 +56,10 @@
     <p>“If you are lucky enough to have lived in Paris as a young man, then wherever you go for the rest of your life, it stays with you, for Paris is a moveable feast.” This was true for Ernest Hemingway, and it is certainly true for me. I studied abroad in Paris from February to June 2009 and it was a seminal point in my life - I fell in love with the city and the culture and grew tremendously as a person. <br>
     <br>Since my study abroad tour de force in 2009, I have been back to the city I love several times, each time staying at an AirBnb location in a different neighborhood to experience the city from a different perspective. As I look forward to 2022 and a (hopeful) return of global leisure travel, my goal is to use Python to find the most desired Airbnbs location in the city of Paris...and later, all of Europe. </p>
     <figure>
-      <img src="/img/airbnb_unit_by_arrond.png" srcset=""alt="airbnb-color-code">
+      <img src="/img/paris_header.png" srcset=""alt="paris-header">
     </figure>
-    
-    <h2>The most attractive Paris AirBnb rental units in Paris:</h2>
-    <p>Methodology:</p>
-    <p>In the category of Paris units that accommodate 4 people or less, see below for the units with the highest predicted values: </p>
+    <h2>The punchline -- the best Airbnb locations in Paris are:</h2>
+    <p>For units that accommodate 4 or less: </p>
     <table>
       <tr>
         <th>Title</th>
@@ -112,7 +110,7 @@
         <td>319.03</td>
       </tr>
     </table>  
-    <p>In the category of Paris units that accommodate 6 people or less, the units with the highest predicted values are: </p>
+    <p>For units that accommodate less than 6 guests: </p>
     <table>
       <tr>
         <th>Title</th>
@@ -163,7 +161,7 @@
         <td>397.57</td>
       </tr>
     </table>  
-    <p>In the category of the pandemic is over so invite all your friends and family and party (no limit on accommodations), the highest predicted value units are: </p>
+    <p>For all units - no limitation on guest count: </p>
     <table>
       <tr style="height:2px;">
         <th>Title</th>
@@ -216,6 +214,21 @@
     </table> 
     <p>* Price refers to the price at the instance the information was scraped</p>
     
+
+    <h2>The Dataset:</h2>
+    <p>The dataset used for this project comes from <a href="http://insideairbnb.com/get-the-data.html" >Insideairbnb.com</a>, which is actually an anti-Airbnb lobbying group that scrapes listings, reviews and calendar data for multiple cities around the world. The dataset that I used from the site was scraped on September 30, 2021. My inital web scrape compiled 50,133 Airbnb listings located in  Paris. All in after data cleansing, my dataset included 50 variables (15 numeric, 34 categorical, 1 datetime) and across the 50,133 observations, 2.8% of the dagta included null or missing values (71,154 missing cells). <br>
+    <br>For a detailed summary of the data please <a href="paris_summary.html" target="_blank">click here</a>. </p>
+    <figure>
+      <img src="/img/paris_neighborhood_summary.png" srcset=""alt="paris-hood-summary">
+    </figure>
+    <figure>
+      <img src="/img/paris_hood_box.png" srcset=""alt="paris-hood-boxplot">
+    </figure>
+    <h2>Methodology:</h2>
+
+    <figure>
+      <img src="/img/airbnb_unit_by_arrond.png" srcset=""alt="airbnb-color-code">
+    </figure>
     <p>I have also conducted similar analysis for a slew of other EU-27 cities. Please see links below:</p>
  
       <ul class='two-column'>
@@ -240,24 +253,73 @@
         <li><a href="/html/airbnb/venice.html" >Venice</a>: 7,568 listings; avg of €143.29</li>
         <li><a href="/html/airbnb/vienna.html" >Vienna</a>: 11,294 listings; avg of €81.10</li>
       </ul>
-
-    <h2>the dataset:</h2>
-    <h2>The neighborhoods</h2>
-    <h2>The result - top 5 and rationale</h2>
-
     <figure>
       <img src="/img/break5.png" srcset=""alt="break">
     </figure>
     <p></p>
     
    <h2>Data acquisition</h2>
-   <p>The datset used for this project comes from <a href="http://insideairbnb.com/get-the-data.html" >Insideairbnb.com</a>, which is actually an anti-Airbnb lobbying group that scrapes listings, reviews and calendar data for multiple cities around the world. The dataset that I used from the site was scraped on September 30, 2021.</p>
+   <p>I wrote a function....</p>
    <br>
-  
-   <figure>
-    <img src="/img/break5.png" srcset=""alt="break">
+  <h2>Regression Analysis</h2>
+  <h2>Exploratory data analysis</h2>
+  <figure>
+    <img src="/img/airbnb_first_host_date.png" srcset=""alt="airbnb-first-host-date">
   </figure>
-  <h2>Cleaning and pre-processing - raw data (n=50,133)</h2>
+   <p>Observations:</p>
+ 
+   <h4>Time Series</h4>
+   <figure>
+     <img src="/img/airbnb_timeseries1.png" srcset=""alt="airbnb-time-series-1">
+   </figure>
+   <p>Observations:</p>
+   <figure>
+     <img src="/img/airbnb_time_series2.png" srcset=""alt="airbnb-time-series-2">
+   </figure>
+   <figure>
+     <img src="/img/airbnb_price_yoy.png" srcset=""alt="airbnb-price-yoy">
+   </figure>
+   <figure>
+     <img src="/img/airbnb_price_sheet.png" srcset=""alt="airbnb-price-sheet">
+   </figure>
+   
+ 
+   <h4>Numerical features</h4>
+   <figure>
+     <img src="/img/airbnb_describe.png" srcset=""alt="airbnb-describe">
+   </figure>
+   <figure>
+     <img src="/img/airbnb_price_distribution.png" srcset=""alt="airbnb-distribution">
+   </figure>
+   <figure>
+     <img src="/img/airbnb_price_distribution2.png" srcset=""alt="airbnb-distribution2">
+   </figure>
+   <figure>
+     <img src="/img/airbnb_price_accommodations.png" srcset=""alt="airbnb-price_accommodations">
+   </figure>
+   
+   <h4>Categorical features</h4>
+   <figure>
+     <img src="/img/airbnb_pearson_code.png" srcset=""alt="airbnb-pearson-code">
+   </figure>
+   <figure>
+     <img src="/img/airbnb_pearson_plot_code.png" srcset=""alt="airbnb-pearson-plot-code">
+   </figure>
+   <figure>
+     <img src="/img/airbnb_feature_correlation.png" srcset=""alt="airbnb-coffee-correlation-code">
+   </figure>
+   <h4>Boolean features</h4>
+   <figure>
+     <img src="/img/airbnb_coffee_nachine_correlation_code.png" srcset=""alt="airbnb-coffee-machine-correlation">
+   </figure>
+   <figure>
+     <img src="/img/airbnb_coffee_correlation.png" srcset=""alt="airbnb-coffee-correlation">
+   </figure>
+   <figure>
+     <img src="/img/break5.png" srcset=""alt="break">
+   </figure>
+ 
+  <h2>Appendix: Cleaning and pre-processing - raw data (n=50,133)</h2>
   <p>The dataset does have some limitations and is quite extensive; to facilitate analysis I will start by importing necessary python packages and libraries, then cleaning the data.</p>
   <h4>Importing the libraries and data</h4>
   <figure>
@@ -353,67 +415,14 @@
   <figure>
     <img src="/img/break5.png" srcset=""alt="break">
   </figure>
-  <h2>Exploratory data analysis</h2>
+  <h2>Appendix: Feature analysis (continued)...</h2>
   <figure>
-    <img src="/img/airbnb_first_host_date.png" srcset=""alt="airbnb-first-host-date">
+    <img src="/img/paris_pairplot.png" srcset=""alt="paris-pairplot">
   </figure>
-  <p>Observations:</p>
+  <figure>
+    <img src="/img/paris_bedroom_corr.png" srcset=""alt="paris-bedroom-corr">
+  </figure>
 
-  <h4>Time Series</h4>
-  <figure>
-    <img src="/img/airbnb_timeseries1.png" srcset=""alt="airbnb-time-series-1">
-  </figure>
-  <p>Observations:</p>
-  <figure>
-    <img src="/img/airbnb_time_series2.png" srcset=""alt="airbnb-time-series-2">
-  </figure>
-  <figure>
-    <img src="/img/airbnb_price_yoy.png" srcset=""alt="airbnb-price-yoy">
-  </figure>
-  <figure>
-    <img src="/img/airbnb_price_sheet.png" srcset=""alt="airbnb-price-sheet">
-  </figure>
-  
-
-  <h4>Numerical features</h4>
-  <figure>
-    <img src="/img/airbnb_describe.png" srcset=""alt="airbnb-describe">
-  </figure>
-  <figure>
-    <img src="/img/airbnb_price_distribution.png" srcset=""alt="airbnb-distribution">
-  </figure>
-  <figure>
-    <img src="/img/airbnb_price_distribution2.png" srcset=""alt="airbnb-distribution2">
-  </figure>
-  <figure>
-    <img src="/img/airbnb_price_accommodations.png" srcset=""alt="airbnb-price_accommodations">
-  </figure>
-  
-  <h4>Categorical features</h4>
-  <figure>
-    <img src="/img/airbnb_pearson_code.png" srcset=""alt="airbnb-pearson-code">
-  </figure>
-  <figure>
-    <img src="/img/airbnb_pearson_plot_code.png" srcset=""alt="airbnb-pearson-plot-code">
-  </figure>
-  <figure>
-    <img src="/img/airbnb_feature_correlation.png" srcset=""alt="airbnb-coffee-correlation-code">
-  </figure>
-  <h4>Boolean features</h4>
-  <figure>
-    <img src="/img/airbnb_coffee_nachine_correlation_code.png" srcset=""alt="airbnb-coffee-machine-correlation">
-  </figure>
-  <figure>
-    <img src="/img/airbnb_coffee_correlation.png" srcset=""alt="airbnb-coffee-correlation">
-  </figure>
-  <figure>
-    <img src="/img/break5.png" srcset=""alt="break">
-  </figure>
-  <h2>Neighborhood ('arrondiseemnt') analysis</h2>
-  <h2>Preparing the data for modeling</h2>
-  <h2>Which units are "undervalued"? based on regression</h2>
-  <h2>Appendix: How does Paris compare in pricing to ther EU-27 cities?</h2>
-  <h2>Appendix: Impact of COVID-19 contagion to booking availabiltiy</h2>
     <footer>
       <hr/>
       <div class="contact">
