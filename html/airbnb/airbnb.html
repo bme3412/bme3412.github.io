@@ -212,24 +212,35 @@
         <td>653.59</td>
       </tr>
     </table> 
-    <p>* Price refers to the price at the instance the information was scraped</p>
-    
+    <p>* Price refers to the price at the instance the information was scraped. <br>
+    <br>The raw code working file for data preprocessing and data exploration can be <a href="https://nbviewer.org/github/bme3412/Python/blob/main/Projects/Airbnb/AirBnb%20Paris.ipynb" >viewed here</a>. <br>
+    The raw code working for for regression analysis can be <a href="https://nbviewer.org/github/bme3412/Python/blob/main/Projects/Airbnb/Airbnb_Paris3.ipynb" >viewed here</a>. </p>
 
     <h2>The Dataset:</h2>
     <p>The dataset used for this project comes from <a href="http://insideairbnb.com/get-the-data.html" >Insideairbnb.com</a>, which is actually an anti-Airbnb lobbying group that scrapes listings, reviews and calendar data for multiple cities around the world. The dataset that I used from the site was scraped on September 30, 2021. My inital web scrape compiled 50,133 Airbnb listings located in  Paris. All in after data cleansing, my dataset included 50 variables (15 numeric, 34 categorical, 1 datetime) and across the 50,133 observations, 2.8% of the dagta included null or missing values (71,154 missing cells). <br>
-    <br>For a detailed summary of the data please <a href="paris_summary.html" target="_blank">click here</a>. </p>
+    <br>For a detailed summary of the data please <a href="paris_summary.html" target="_blank">click here</a>. <br>
+    <br>Below I have aggregrated each unit by neighborhood (in Paris they are referred to as 'arrondisements') and provided summary statistics, including unit count by arrondisement and average price. The box plot below depicts the distribution of nightly listing prices. The Saint-Germain-des-Pres/Odeon and Le Marais arrondisements have the highest nightly prices, which is no surprise as these areas are arguably the prettiest and are the most culturally important.</p>
+    <figure>
+      <img src="/img/paris_arr_code.png" srcset=""alt="paris-arr-code">
+    </figure>
     <figure>
       <img src="/img/paris_neighborhood_summary.png" srcset=""alt="paris-hood-summary">
+    </figure>
+    
+    <figure>
+      <img src="/img/paris_hood_boxplot_code.png" srcset=""alt="paris-hood-boxplot-code">
     </figure>
     <figure>
       <img src="/img/paris_hood_box.png" srcset=""alt="paris-hood-boxplot">
     </figure>
     <h2>Methodology:</h2>
-
+    <figure>
+      <img src="/img/paris_map_code.png" srcset=""alt="paris-map-code">
+    </figure>
     <figure>
       <img src="/img/airbnb_unit_by_arrond.png" srcset=""alt="airbnb-color-code">
     </figure>
-    <p>I have also conducted similar analysis for a slew of other EU-27 cities. Please see links below:</p>
+    <p>I have also conducted similar analysis for a several other EU-27 cities on the Airbnb platform. Please see links below:</p>
  
       <ul class='two-column'>
         <li><a href="/html/airbnb/amsterdam.html" >Amsterdam</a>: 16,116 listings; avg of €156.91/day</li>
@@ -259,16 +270,42 @@
     <p></p>
     
    <h2>Data acquisition</h2>
-   <p>I wrote a function....</p>
-   <br>
+   <p>I used several functions. In the first function...</p>
+   <figure>
+    <img src="/img/paris_data_function.png" srcset=""alt="paris-data-function">
+  </figure>
+  <p>From there I wrote functions to covnert the data into pandas dataframes, and also provided descriptiv statistics.</p>
+  <figure>
+    <img src="/img/paris_df_function.png" srcset=""alt="paris-df-function">
+  </figure>
   <h2>Regression Analysis</h2>
+  <figure>
+    <img src="/img/paris_join_review.png" srcset=""alt="paris-join-review-data">
+  </figure>
+  <figure>
+    <img src="/img/paris_regress_code.png" srcset=""alt="paris-regress-code">
+  </figure>
+  <figure>
+    <img src="/img/paris_regr_coeff.png" srcset=""alt="paris-regress-coeff">
+  </figure>
+  <p>From there I was able to use the pandas 'query' function to find the highest predicted value unit, taking into account reviews and various features such as # of accommodations, etc.</p>
+  <figure>
+    <img src="/img/paris_regr_highest.png" srcset=""alt="paris-regress-highest">
+  </figure>
+  <p>I was also able to identify the biggest gap between predicted price based on the regression, and listed price: </p>
+  <figure>
+    <img src="/img/paris_reg_discount.png" srcset=""alt="paris-regress-discount">
+  </figure>
+  <figure>
+    <img src="/img/break5.png" srcset=""alt="break">
+  </figure>
   <h2>Exploratory data analysis</h2>
   <figure>
     <img src="/img/airbnb_first_host_date.png" srcset=""alt="airbnb-first-host-date">
   </figure>
    <p>Observations:</p>
  
-   <h4>Time Series</h4>
+   <h3>Time Series</h3>
    <figure>
      <img src="/img/airbnb_timeseries1.png" srcset=""alt="airbnb-time-series-1">
    </figure>
@@ -284,7 +321,7 @@
    </figure>
    
  
-   <h4>Numerical features</h4>
+   <h3>Numerical features</h3>
    <figure>
      <img src="/img/airbnb_describe.png" srcset=""alt="airbnb-describe">
    </figure>
@@ -298,7 +335,7 @@
      <img src="/img/airbnb_price_accommodations.png" srcset=""alt="airbnb-price_accommodations">
    </figure>
    
-   <h4>Categorical features</h4>
+   <h3>Categorical features</h3>
    <figure>
      <img src="/img/airbnb_pearson_code.png" srcset=""alt="airbnb-pearson-code">
    </figure>
@@ -308,13 +345,54 @@
    <figure>
      <img src="/img/airbnb_feature_correlation.png" srcset=""alt="airbnb-coffee-correlation-code">
    </figure>
-   <h4>Boolean features</h4>
+   <figure>
+    <img src="/img/paris_bedroom_corr_code.png" srcset=""alt="paris-bedroom-corr-code">
+  </figure>
+  <figure>
+    <img src="/img/paris_bedroom_corr_boxplot.png" srcset=""alt="paris-bedroom-corr-plot">
+  </figure>
+  <figure>
+    <img src="/img/paris_accomodates_corr_code.png" srcset=""alt="paris-accomodates-corr-code">
+  </figure>
+  <figure>
+    <img src="/img/paris_accomodates_corr_boxplot.png" srcset=""alt="paris-accommodates-corr-plot">
+  </figure>
+  <figure>
+    <img src="/img/paris_beds_corr_code.png" srcset=""alt="paris-beds-corr-code">
+  </figure>
+  <figure>
+    <img src="/img/paris_beds_corr_plot.png" srcset=""alt="paris-beds-corr-plot">
+  </figure>
+
+
+
+
+   <h3>Boolean features</h3>
    <figure>
      <img src="/img/airbnb_coffee_nachine_correlation_code.png" srcset=""alt="airbnb-coffee-machine-correlation">
    </figure>
    <figure>
      <img src="/img/airbnb_coffee_correlation.png" srcset=""alt="airbnb-coffee-correlation">
    </figure>
+   <figure>
+    <img src="/img/paris_instant_corr_code.png" srcset=""alt="paris-instant-corr-code">
+  </figure>
+  <figure>
+    <img src="/img/paris_instant_corr_plot.png" srcset=""alt="paris-instant-corr-plot">
+  </figure>
+  <figure>
+    <img src="/img/paris_airc_corr_code.png" srcset=""alt="paris-airc-corr-code">
+  </figure>
+  <figure>
+    <img src="/img/paris_airc_corr_plot.png" srcset=""alt="paris-airc-corr-plot">
+  </figure>
+  <figure>
+    <img src="/img/paris_tv_corr_code.png" srcset=""alt="paris-tv-corr-code">
+  </figure>
+  <figure>
+    <img src="/img/paris_tv_corr_plot.png" srcset=""alt="paris-tv-corr-plot">
+  </figure>
+
    <figure>
      <img src="/img/break5.png" srcset=""alt="break">
    </figure>
@@ -421,6 +499,27 @@
   </figure>
   <figure>
     <img src="/img/paris_bedroom_corr.png" srcset=""alt="paris-bedroom-corr">
+  </figure>
+  <h2>Appendix: Regression analysis</h2>
+  <p>First I started with linear regression.</p>
+  <figure>
+    <img src="/img/paris_linear_reg_code.png" srcset=""alt="paris-linear-reg">
+  </figure>
+  <figure>
+    <img src="/img/paris_lin_reg_plot.png" srcset=""alt="paris-linear-reg-plot">
+  </figure>
+  <figure>
+    <img src="/img/paris_lin_reg_plot.png" srcset=""alt="paris-linear-reg-plot">
+  </figure>
+  <figure>
+    <img src="/img/paris_linear_reg.png" srcset=""alt="paris-linear-reg">
+  </figure>
+  <p>Multiple regression provided a much more reliable exercise in predicting the pricing of units based on several features from the dataset. But first I needed to prepare the data:</p>
+  <figure>
+    <img src="/img/paris_multi_reg_prep.png" srcset=""alt="airbnb-multi-reg-prep">
+  </figure>
+  <figure>
+    <img src="/img/paris_multi_reg_code.png" srcset=""alt="airbnb-multi-reg-code">
   </figure>
 
     <footer>
