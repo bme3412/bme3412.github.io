@@ -51,15 +51,15 @@
       <a href="/html/work.html"class="active" >Work</a> 
       <a href="/html/fun.html">When Not Working</a>  
     </nav>
-
+    <h2>Paris is always a good idea: Identifying the best -- and most mispriced -- airbnb units in Paris, using BeautifulSoup, pandas, MatplotLib/Seaborn, and scikit-learn</h2>
     <p>December 15, 2021</p>
     <p>“If you are lucky enough to have lived in Paris as a young man, then wherever you go for the rest of your life, it stays with you, for Paris is a moveable feast.” This was true for Ernest Hemingway, and it is certainly true for me. I studied abroad in Paris from February to June 2009 and it was a seminal point in my life - I fell in love with the city and the culture and grew tremendously as a person. <br>
     <br>Since my study abroad tour de force in 2009, I have been back to the city I love several times, each time staying at an AirBnb location in a different neighborhood to experience the city from a different perspective. As I look forward to 2022 and a (hopeful) return of global leisure travel, my goal is to use Python to find the most desired Airbnbs location in the city of Paris...and later, all of Europe. </p>
     <figure>
       <img src="/img/paris_header.png" srcset=""alt="paris-header">
     </figure>
-    <h2>The punchline -- the best Airbnb locations in Paris are:</h2>
-    <p>For units that accommodate 4 or less: </p>
+    <h2>Key takeaways -- the best Airbnb locations in Paris, with predicted prices the result of multiple regression:</h2>
+    <p>For units that accommodate 4 guests or less (with links to visit the listing), sorted by highest expected price:  </p>
     <table>
       <tr>
         <th>Title</th>
@@ -213,13 +213,15 @@
       </tr>
     </table> 
     <p>* Price refers to the price at the instance the information was scraped. <br>
+    Expected price is the output of regression models, and includes the following parameters: # of guests, # of beds, # of bedrooms, availability in the past 90 days, and guest reviews (scale of 1-5) for: overall rating, accuracy, cleanliness, location, and value.<br>
     <br>The raw code working file for data preprocessing and data exploration can be <a href="https://nbviewer.org/github/bme3412/Python/blob/main/Projects/Airbnb/AirBnb%20Paris.ipynb" >viewed here</a>. <br>
-    The raw code working for for regression analysis can be <a href="https://nbviewer.org/github/bme3412/Python/blob/main/Projects/Airbnb/Airbnb_Paris3.ipynb" >viewed here</a>. </p>
+    The raw code working file for regression analysis can be <a href="https://nbviewer.org/github/bme3412/Python/blob/main/Projects/Airbnb/Airbnb_Paris3.ipynb" >viewed here</a>. </p>
 
-    <h2>The Dataset:</h2>
-    <p>The dataset used for this project comes from <a href="http://insideairbnb.com/get-the-data.html" >Insideairbnb.com</a>, which is actually an anti-Airbnb lobbying group that scrapes listings, reviews and calendar data for multiple cities around the world. The dataset that I used from the site was scraped on September 30, 2021. My inital web scrape compiled 50,133 Airbnb listings located in  Paris. All in after data cleansing, my dataset included 50 variables (15 numeric, 34 categorical, 1 datetime) and across the 50,133 observations, 2.8% of the dagta included null or missing values (71,154 missing cells). <br>
-    <br>For a detailed summary of the data please <a href="paris_summary.html" target="_blank">click here</a>. <br>
-    <br>Below I have aggregrated each unit by neighborhood (in Paris they are referred to as 'arrondisements') and provided summary statistics, including unit count by arrondisement and average price. The box plot below depicts the distribution of nightly listing prices. The Saint-Germain-des-Pres/Odeon and Le Marais arrondisements have the highest nightly prices, which is no surprise as these areas are arguably the prettiest and are the most culturally important.</p>
+    <h2>The Datasets:</h2>
+    <p>The dataset used for this project comes from <a href="http://insideairbnb.com/get-the-data.html" >Insideairbnb.com</a>, which is actually an anti-Airbnb lobbying group that scrapes listings, reviews and calendar data for multiple cities around the world. The dataset that I used from the site was scraped on September 30, 2021. My inital data set compiled 50,133 Airbnb listings located in  Paris. All in after data cleansing, my dataset included 50 variables (15 numeric, 34 categorical, 1 datetime) and across the 50,133 observations, 2.8% of the data included null or missing values (71,154 missing cells). <br>
+    <br>For a detailed summary of the Paris data set please <a href="paris_summary.html" target="_blank">click here</a>. <br>
+    <br>I extended the analysis to include airbnb listings for additional European cities on the platform. This dataset has the same # of variables (15 numeric, 34 categorical, 1 datetime) and 280,558 observations for 20 additional cities, from Amsterdam to Vienna.<br>
+    <br>For a cursory look at the Paris dataset, below I have aggregrated and visualized each unit by neighborhood (in Paris these are referred to as 'arrondisements') and provided summary statistics, including unit count by arrondisement and average price. The box plot below depicts the distribution of nightly listing prices. The Saint-Germain-des-Pres/Odeon and Le Marais arrondisements have the highest average nightly prices, which is no surprise as these areas are arguably the prettiest and the most culturally important.</p>
     <figure>
       <img src="/img/paris_arr_code.png" srcset=""alt="paris-arr-code">
     </figure>
@@ -233,14 +235,14 @@
     <figure>
       <img src="/img/paris_hood_box.png" srcset=""alt="paris-hood-boxplot">
     </figure>
-    <h2>Methodology:</h2>
+    <p>Below I used longitude and latitude data to plot all airbnb units and color-coded by arrondisement.</p>
     <figure>
       <img src="/img/paris_map_code.png" srcset=""alt="paris-map-code">
     </figure>
     <figure>
       <img src="/img/airbnb_unit_by_arrond.png" srcset=""alt="airbnb-color-code">
     </figure>
-    <p>I have also conducted similar analysis for a several other EU-27 cities on the Airbnb platform. Please see links below:</p>
+    <p>I have also conducted similar analysis for a several other EU-27 cities on the Airbnb platform - the goal of which was to use regression models to find the highest expected price units, as well as to identify the biggest gap between expected price and actual price. Please see links below:</p>
  
       <ul class='two-column'>
         <li><a href="/html/airbnb/amsterdam.html" >Amsterdam</a>: 16,116 listings; avg of €156.91/day</li>
@@ -268,17 +270,20 @@
       <img src="/img/break5.png" srcset=""alt="break">
     </figure>
     <p></p>
-    
    <h2>Data acquisition</h2>
-   <p>I used several functions. In the first function...</p>
+   <p>The underlying data I used for my analysis is located on insideairbnb.com (and is not affiliated with Airbnb the company). In order to acquire the data in the most efficient and systematic (repeatable) method, I wrote a function that relied on the BeautifulSoup package, which is used for web-scraping information from websites. My function pulled in the data from the website and then saved the information as a csv file with the date of each information package (the insideairbnb.com site publishes new listings data on a monthly basis). The code is reproduced below:</p>
    <figure>
     <img src="/img/paris_data_function.png" srcset=""alt="paris-data-function">
   </figure>
-  <p>From there I wrote functions to covnert the data into pandas dataframes, and also provided descriptiv statistics.</p>
+  <p>Next, I wrote functions that converted all csv files from the prior function to pandas dataframes, and then I appended all these monthly dataframes into a master dataframe for each city. As part of my function I also wrote code that provided summary information of each monthly dataframe that was loaded into the master dataframe. The code below shows that the Decmember 2012 dataframe contianes 65,917 listings, with an average price of 114.28 per night, whereas the July 2021 dataset contains 51,040 listings with an average price of 124.53 per night.</p>
   <figure>
     <img src="/img/paris_df_function.png" srcset=""alt="paris-df-function">
   </figure>
+  <figure>
+    <img src="/img/break5.png" srcset=""alt="break">
+  </figure>
   <h2>Regression Analysis</h2>
+  <p>In order to predict the prices of each airbnb unit, I relied on regression analysis and the scikit-learn package. But in order to get to this step, I did a significant amount of data cleaning and pre-processing - please see the Appendix section for more detail. The key dependent variables I relied on for my regression analysis included # of accommodations, # of bedrooms, # of beds, availabiltiy in the past 90 days, and user review scores for accuracy, cleanliness, location, value, and overall experience. I ran several regressions for Paris (and all other European cities) with constraints for # of guests with the goal of predicting the expected price of the unit.  </p>
   <figure>
     <img src="/img/paris_join_review.png" srcset=""alt="paris-join-review-data">
   </figure>
@@ -288,11 +293,11 @@
   <figure>
     <img src="/img/paris_regr_coeff.png" srcset=""alt="paris-regress-coeff">
   </figure>
-  <p>From there I was able to use the pandas 'query' function to find the highest predicted value unit, taking into account reviews and various features such as # of accommodations, etc.</p>
+  <p>From there I was able to use the pandas 'query' function to find the highest predicted value units, taking into account published user reviews and various features such as # of accommodations, etc. See below for the top 5 highest expected nightly prices. It makes intuitive sense that the predicted price is positively correlated with # of guests and # of bedrooms/beds. Higher scores tend to also be positively correlated with better review scores, but the # of reviews and length of available duration does have an indiscriminant effect on the predicted price. It's also important to point out that certain optional features such as 'instant bookable' and 'super hosts' resulted in higher predicted prices. The presence of advertised amenities such as 'air conditioning', 'internet connectivity' and 'tv', among others, were also postively correlated to price.</p>
   <figure>
     <img src="/img/paris_regr_highest.png" srcset=""alt="paris-regress-highest">
   </figure>
-  <p>I was also able to identify the biggest gap between predicted price based on the regression, and listed price: </p>
+  <p>For those seeking more affordability and better value, I was also able to identify the biggest gap between predicted price based on the regression, and listed price: </p>
   <figure>
     <img src="/img/paris_reg_discount.png" srcset=""alt="paris-regress-discount">
   </figure>
@@ -300,16 +305,22 @@
     <img src="/img/break5.png" srcset=""alt="break">
   </figure>
   <h2>Exploratory data analysis</h2>
+  <p>As part of my analysis and before using sci-kit learn to run predict nightly prices, I conducted some exploraory data analysis on my dataset. My analysis falls into a few themes and was largely dictated by the type of variables. Below I show code and analysis for time series data, numerical data, categorical variable and boolean features.</p>
+  <h3>Time Series</h3>
+  <p>Observations:</p>
+  <ul>
+    <li>Of the Airbnb hosts still listing on the site, the earliest host that joined did so on February 28, 2010, and the most recent new host joined September 11, 2021 (note the data was initially scraped in September 2021).</li>
+    <li>The outbreak of COVID-19 had a massive impact on new hosts, availability of units, nightly pricing, and ultimately the entire Airbnb company business model. For safety concerns Airbnb was forced to stop hosting guests (and did make efforts to generate additional revenue streams through virtual experiences).</li>
+    <li>Seasonal decompostion analysis shows a repeating pattern, with steady gains in # of listings from 2014 and each year into 2020. The frequency of bookings coincided with the European vacation schedule, where many Parisians leave the city in August. Bookings also spiked toward the end of the year around holdiay season where demand is higher.</li>
+    <li>Pricing power is pretty under-stated on the platform, and a lot of this might have to do with increased regulatory scrutiny. Airbnb is very heavily scrutinized by the Parisian government, much more so than other cities.</li>
+  </ul>
   <figure>
     <img src="/img/airbnb_first_host_date.png" srcset=""alt="airbnb-first-host-date">
   </figure>
-   <p>Observations:</p>
- 
-   <h3>Time Series</h3>
    <figure>
      <img src="/img/airbnb_timeseries1.png" srcset=""alt="airbnb-time-series-1">
    </figure>
-   <p>Observations:</p>
+   
    <figure>
      <img src="/img/airbnb_time_series2.png" srcset=""alt="airbnb-time-series-2">
    </figure>
@@ -322,6 +333,11 @@
    
  
    <h3>Numerical features</h3>
+   <p>Observations:</p>
+  <ul>
+    <li>Nightly advertised prices ranged from 0 to 11,600 per night (for my analysis I did remove null values). The majority of prices were under 300 per night, but there did exit some outliers.</li>
+    <li>Median nightly prices generally increased with an increase in number of guests that a unit accommodated. Interestingly, median pricing did peak at 12 guests and then started to decline. This may be due to some mislabeling of data (ex: it's possible that some units that accommodated a higher # of guests are actually hostels, and as a result median pricing experienced downward pressure). </li>
+  </ul>
    <figure>
      <img src="/img/airbnb_describe.png" srcset=""alt="airbnb-describe">
    </figure>
@@ -336,6 +352,13 @@
    </figure>
    
    <h3>Categorical features</h3>
+   <ul>
+    <li>Exploring categorical variables, and in particular using correlation analysis helped considerably in understanding the most important variables to use for regression analysis to predict nightly prices.</li>
+    <li> Variables related to capacity (# of guests, # of bedrooms, # of beds) were the most positively correlated with price. </li>
+    <li>Next in terms of explanatory power was host listings count. I don't believe this data is published to guests on the platform at time of booking, but the positve correlation to price does demonstrate that experience and knowledge of the platform is important and helps to reveal potential pricing power.</li>
+    <li>Certain features (instant booking, 90-day availabiltiy) did remove some buyer friction and generally resulted in higher pricing</li>
+    <li>The presence of certain amenities (air conditioning, tv, coffee machine, etc) are positively correlated with pricing, but to a lesser extent than capacity, host experience and booking features.</li>
+  </ul>
    <figure>
      <img src="/img/airbnb_pearson_code.png" srcset=""alt="airbnb-pearson-code">
    </figure>
@@ -397,22 +420,22 @@
      <img src="/img/break5.png" srcset=""alt="break">
    </figure>
  
-  <h2>Appendix: Cleaning and pre-processing - raw data (n=50,133)</h2>
-  <p>The dataset does have some limitations and is quite extensive; to facilitate analysis I will start by importing necessary python packages and libraries, then cleaning the data.</p>
+  <h2>Appendix 1: Cleaning and pre-processing - raw data (n=50,133)</h2>
+  <p>The dataset does have some limitations and is quite extensive; to facilitate analysis I started by importing necessary python packages and libraries, then explored and ultimately cleaned the data.</p>
   <h4>Importing the libraries and data</h4>
   <figure>
     <img src="/img/import_paris.png" srcset=""alt="import-paris">
     <figcaption>Importing the file - which contains 50,133 AirBnb listings</figcaption>
   </figure>
   <h4>Dropping initial columns</h4>
-  <p>To simplify the dataset, I will drop columns that will not useful in predicting price. I also will check for missing data - and drop tbose columns that have a majority of data that is null.</p>
+  <p>To simplify the dataset, I dropped certain columns that did not prove helpful in predicting price. I also checked for missing data - and dropped those columns that had a majority of data that is null.</p>
   <figure>
     <img src="/img/drop_initial.png" srcset=""alt="drop-initial">
   </figure>
   <figure>
     <img src="/img/isna_sum.png" srcset=""alt="isna-sum">
   </figure>
-  <p>Now check for the boolean and categorical data, to see if any of them are worth including:</p>
+  <p>Now I checked for the boolean and categorical data, to see if any of them are worth including:</p>
   <figure>
     <img src="/img/airbnb_hist.png" srcset=""alt="airbnb-hist">
   </figure>
@@ -422,8 +445,8 @@
     <li>host_since - date that the host first joined Airbnb</li>
     <li>host_response_time - average amount of time the host takes to communicate</li>
     <li>host_response_rate - proportion of messages that the host replies to</li>
-    <li>host_is_superhost - whether or not the host is a superhost, which is a mark of quality for the top-rated and most experienced hosts, and can increase your search ranking on Airbnb</li>
-    <li>property_type - type of property, e.g. house or flat</li>
+    <li>host_is_superhost - whether or not the host is a superhost, which is a mark of quality for the top-rated and most experienced hosts, and can increase search ranking on Airbnb</li>
+    <li>property_type - type of property, e.g. house, apartement, or hotel</li>
     <li>room_type - type of listing, e.g. entire home, private room or shared room</li>
     <li>bathrooms - number of bathrooms</li>
     <li>beds - number of beds</li>
@@ -449,15 +472,20 @@
     <li>reviews_per_month - calculated field of the average number of reviews left by guest each month</li>
   </ul>
 
-  <h3>Cleaning individual columns</h3>
-  <p>Working with</p>
+  <h3>Cleaning individual variables</h3>
+  <p>After identifying those variables that I expected to prove most useful in my analysis, I still had to clean the data and convert some data to numerical data types.</p>
+  <p>Observations:</p>
+  <ul>
+    <li>Host response time proved an unreliable indicator of experience on the platform as the majority of cells in this varaible were null/unknown. For the data that was provided, most hosts returned communication within an hour to a few hours.</li>
+    <li> As trust and communication between hosts and guests is a key component of the platform, the mean host response rate was 89.0% and the median response rate was 100.0%. 62.1% of hosts had 100% response rates to guest inquiries. </li>
+    <li>The majority of units were classified as entire rental units, followed next by private rooms in rental units. The majority of property types were houses/residences, followed next by apartments and then hotels.</li>
+  </ul>
   <figure>
     <img src="/img/host_response_time.png" srcset=""alt="host-response-time">
   </figure>
   <figure>
     <img src="/img/host_response_time_plot.png" srcset=""alt="host-response-time-plot">
   </figure>
-  <p>Observations:</p>
   <figure>
     <img src="/img/host_response_rate.png" srcset=""alt="host-response-rate">
   </figure>
@@ -467,7 +495,7 @@
   <figure>
     <img src="/img/host_response_rate_plot.png" srcset=""alt="host-response-rate-plot">
   </figure>
-  <p>Observations:</p>
+  
   <figure>
     <img src="/img/property_type.png" srcset=""alt="property-type">
   </figure>
@@ -477,31 +505,34 @@
   <figure>
     <img src="/img/property_type_plot.png" srcset=""alt="property-type-plot">
   </figure>
-  <p>Observations:</p>
+  
   <figure>
     <img src="/img/amenities.png" srcset=""alt="amenities">
   </figure>
-  <p>Observations:</p>
+ 
   <figure>
     <img src="/img/amenities_drop.png" srcset=""alt="amenities-drop">
   </figure>
-  <p>Observations:</p>
+  
   <figure>
     <img src="/img/price_airbnb.png" srcset=""alt="price-airbnb">
   </figure>
-  <p>Observations:</p>
+  
   <figure>
     <img src="/img/break5.png" srcset=""alt="break">
   </figure>
-  <h2>Appendix: Feature analysis (continued)...</h2>
+  <h2>Appendix 2: Feature analysis</h2>
   <figure>
     <img src="/img/paris_pairplot.png" srcset=""alt="paris-pairplot">
   </figure>
   <figure>
     <img src="/img/paris_bedroom_corr.png" srcset=""alt="paris-bedroom-corr">
   </figure>
-  <h2>Appendix: Regression analysis</h2>
-  <p>First I started with linear regression.</p>
+  <figure>
+    <img src="/img/break5.png" srcset=""alt="break">
+  </figure>
+  <h2>Appendix 3: Regression analysis</h2>
+ 
   <figure>
     <img src="/img/paris_linear_reg_code.png" srcset=""alt="paris-linear-reg">
   </figure>
@@ -514,7 +545,7 @@
   <figure>
     <img src="/img/paris_linear_reg.png" srcset=""alt="paris-linear-reg">
   </figure>
-  <p>Multiple regression provided a much more reliable exercise in predicting the pricing of units based on several features from the dataset. But first I needed to prepare the data:</p>
+  <p>Multiple regression provided a much more reliable exercise in predicting the pricing of units based on several features from the dataset. </p>
   <figure>
     <img src="/img/paris_multi_reg_prep.png" srcset=""alt="airbnb-multi-reg-prep">
   </figure>
