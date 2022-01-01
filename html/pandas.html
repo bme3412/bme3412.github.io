@@ -85,9 +85,13 @@
       <img src="/img/missing_data.png" srcset=""alt="drop_na">
       <figcaption>Visualizing patterns in missing data</figcaption>
     </figure>
+    <h4>Calculate # of missing values in each column, and then sort</h4>
     <figure>
-      <img src="/img/drop_na.png" srcset=""alt="drop_na">
-      <figcaption>Dropping nulls based on conditional null values</figcaption>
+      <img src="/img/shark_isna.png" srcset=""alt="shark-isna">
+    </figure>
+    <h4>Dropping columns with null values, and also conditionally drop based on missing data threshholds</h4>
+    <figure>
+      <img src="/img/shark_dropna.png" srcset=""alt="shark-isna">
     </figure>
     <figure>
       <img src="/img/break5.png" srcset=""alt="break">
@@ -102,6 +106,13 @@
     </figure>
     <figure>
       <img src="/img/break5.png" srcset=""alt="break">
+      <br><h4>When dealing with messy datetime data - use "errors='coerce'" to make non-dates into NaT values</h4>
+    <p></p>
+    <figure>
+      <img src="/img/shark_NaT.png" srcset=""alt="shark-NaT">
+      <figcaption>When dealing with dates and there is mixed data - use "errors='coerce'" to replace all non-date data types with NaT, and then drop null values to clean data</figcaption>
+    </figure>
+    <figure>
   </figure>
     <br><h4>Formatting integers/floats in DataFrames through method-chaining</h4>
     <p></p>
