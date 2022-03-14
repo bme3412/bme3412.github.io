@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html>  
+  <head>
+    <title>The iPhone Halo Effect</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content>
+    <meta name="author" content="Brendan Erhard">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+    <!--[if IE]>
+      <style>
+        <link rel="stylesheet" type="text/css" href="css/ie9.css"/>
+      </style>
+    <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118173659-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-118173659-1');
+    </script>
+    <!--favi-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!--font awesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--my CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/css/ie10.css" type="text/css"> 
+    
+  </head>
+  
+  <body>
+   <div class="container">
+    <nav>
+        <a href="/html/index.html" id="branding">Brendan</a>
+        <a href="/html/about.html" >About</a>
+        <a href="/html/mystory.html">My Story</a> 
+        <a href="/html/work.html"class="active" >Work</a> 
+        <a href="/html/fun.html">When Not Working</a>   
+    </nav>
+    
+    <h3>Abstract: the iPhone Halo Effect</h3>
+    <p>Investors are presented with an anomaly when investing in shares of Apple, Inc ("AAPL"): the stock tends to outperform leading up to a new iPhone product release as investors anticipate continued growth and market share gains from innovation for its flagship product. But at the same time, the Cupertino, Californa-based technology giant is the most valuable company in the world, with an equity market cap exceeeding $2.5 trillion, and in 2020 AAPL became the first company ever to exceed $1 trillion in market cap. Active managers, especially those that strive for relative gains, must have an opinion on AAPL as it is often a significant allocation to industry-wide benchmarks (AAPL is 6.8% of the S&P500, 12.4% of the Nasdaq 100, and 20.1% of the iShares Technology index). <br> 
+    </br> I wanted to test the adage that alpha can be earned by going long AAPL stock in the time period leading up to the iPhone product announcement and release, and then close the bet the day the iPhone is released. I found that in most cases, AAPL stock tend to outperform in both the time period leading up to an iPhone release as well as in time periods after the product release.  <br>
+    </br> 
+    <h4>Investment Implications:</h4> <br>
+    </br> <ul>
+        <li>
+            AAPL is best known as the creator of the iPhone, which as of most recent quarter accounted for 60% of revenue and 40% of profit. Apple regularly reports metrics related to the iPhone sales as part of its quarterly earnings reports - and for this reason, equity analysts regularly publish estimates for metrics related to iPhone units, unit growth, pricing trends, etc. These analyst estimates are then embedded in market expectations for investors. 
+        </li>
+    </ul>
+    
+    </p>
+    <figure>
+        <img src="/img/cohort_returns.png" srcset=""alt="cohort-returns">
+    </figure>
+    <figure> <br>
+    </br><img src="/img/iPhone_sp500.png" srcset=""alt="iphone-SP500">
+    </figure>
+    <figure> <br>
+    </br><img src="/img/iphones_all.png" srcset=""alt="iphons-all">
+    </figure>
+    </p>
+
+
+    <h3>Data and Methodology</h3>
+    <p>I used 3 data sets for my analysis. 1) I used 'pandas.read_html()' to pull in data from the <span><a href="https://en.wikipedia.org/wiki/List_of_iOS_and_iPadOS_devices#iPhone"> iPhone Wikipedia site</a></span> for product announcement and product release dates.
+    2) I pulled in AAPL stock price data (adjusted for stock splits) from the Nasdaq website. 3) I pulled in <span><a href="https://fred.stlouisfed.org/series/SP500"> S&P 500 data</a></span>  from the St. Louis Federal Reserve. <br>
+    </br>Summaries of data sets are located here: <span><a href="AAPL_prices.html"> AAPL price data </a></span> & <span><a href="SP500_prices.html"> SP500 price data </a></span>.
+    </p>
+    <br>
+    <figure>
+      <img src="/img/iphone_dates.png" srcset=""alt="iphone-dates">
+    </figure>
+    <figure>
+        <img src="/img/break5.png" srcset=""alt="break">
+    </figure>
+    <h3>Other Considerations</h3>
+    <ul>
+        <li>
+            I can make the analysis better by including more data - valuation metrics, analyst revisions, pricing differences
+        </li>
+    </ul>
+    <footer>
+      <hr/>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/brendan-erhard/" target="_blank">
+          <i title="linkedin" class="fab fa-linkedin-in fa-lg social"></i>
+        </a>
+        <a href="mailto:erhardbr@gmail.com" target="_top">
+          <i title="email" class="far fa-envelope fa-lg social"></i>
+        </a>
+        <a href="https://twitter.com/bme3414" target="_top">
+          <i title="twitter" class="fab fa-twitter fa-lg social"></i>
+        </a>
+        <a href="https://github.com/bme3412" target="_blank">
+          <i title="github" class="fab fa-github fa-lg social"></i>
+        </a>
+      <p>Made by BME, ©2021</p>
+    </footer>
+    
+   </div>
+   
+    <script src="/js/script.js"></script>
+  </body>
+  
+</html>
